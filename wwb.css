@@ -1,5 +1,5 @@
 body {
-    background-color: #d3d3d3;
+    background-color: #f0f0f0; /* light gray background */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,6 +12,26 @@ body {
     margin: 0 auto;
 }
 
+.content-box {
+    background-color: #ffffff; /* White background for content box */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 #code-layer {
     display: block;
     background-color: #1e1e1e;
@@ -21,9 +41,6 @@ body {
     margin: 30px 0;
     font-family: "Courier New", Courier, monospace;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s, transform 0.5s;
@@ -37,6 +54,7 @@ button#copy-btn {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 button#copy-btn:hover {
@@ -44,16 +62,17 @@ button#copy-btn:hover {
 }
 
 #image-section {
-    text-align: center;
-    margin-top: 20px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s, transform 0.5s;
+    margin-top: 20px;
 }
 
 .responsive-image {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     height: auto;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -61,4 +80,10 @@ button#copy-btn:hover {
 #code-layer.visible, #image-section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+h2 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
