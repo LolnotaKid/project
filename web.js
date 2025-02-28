@@ -2,6 +2,8 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     var codeText = document.querySelector('#code-layer code').innerText;
     navigator.clipboard.writeText(codeText).then(function() {
         alert('Code copied to clipboard!');
+    }).catch(function(err) {
+        alert('Failed to copy code: ' + err);
     });
 });
 
