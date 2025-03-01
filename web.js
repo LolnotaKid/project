@@ -19,4 +19,10 @@ window.addEventListener('scroll', function() {
     if (imageRect.top < window.innerHeight) {
         imageSection.classList.add('visible');
     }
+
+    var featuresSection = document.getElementById('features-section');
+    var featuresRect = featuresSection.getBoundingClientRect();
+    if (featuresRect.top < window.innerHeight) {
+        featuresSection.classList.add('visible');
+    }
 });
