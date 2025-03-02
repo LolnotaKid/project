@@ -7,33 +7,66 @@
     <link rel="stylesheet" href="wwb.css">
 </head>
 <body>
+
+    <!-- Three-dot menu -->
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <button onclick="enablePremium()">Premium Version</button>
+        </div>
+    </div>
+
     <div class="container">
-        <div class="content-box">
-            <h1>WHAT'S VEUX LOGGER</h1>
-            <p>Veux Logger is a exploit script for Roblox that finds all VFXs from the game. It Does Works On All Executer. and It Support Mostly all Games. We're Working On That Script To Make it More Better. SCROLL FOR MORE 📜</p>
-        </div>
-
-        <div id="code-layer" class="hidden">
-            <h2>Copy the Code</h2>
-            <div class="code-box">
-                <pre><code>loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Vfxloggerv1/refs/heads/main/VfxloggerV1Byveux.txt"))()</code></pre>
+        <div id="main-content">
+            <div class="content-box">
+                <h1>WHAT'S VEUX LOGGER</h1>
+                <p>Veux Logger is a script for Roblox that finds all VFXs from the game. It's unnecessary for some people who don't use it, but we've done so many big updates on that!</p>
             </div>
-            <button id="copy-btn">Copy Code</button>
+
+            <div id="code-layer" class="hidden">
+                <h2>Copy the Code</h2>
+                <div class="code-box">
+                    <pre><code>loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Vfxloggerv1/refs/heads/main/VfxloggerV1Byveux.txt"))()</code></pre>
+                </div>
+                <button id="copy-btn">Copy Code</button>
+            </div>
+
+            <div id="image-section" class="hidden">
+                <img src="https://raw.githubusercontent.com/LolnotaKid/Pic/main/1740749023021.png" alt="Veux Logger Image" class="responsive-image">
+            </div>
+
+            <div class="content-box hidden" id="features-section">
+                <h1>HOW MANY FEATURES ARE AVAILABLE?</h1>
+                <p>Currently, there are 3 features available:</p>
+                <ul>
+                    <li><strong>Full Screen</strong> - For those who can't see the full path and want to make it bigger.</li>
+                    <li><strong>Run VFX</strong> - Allows you to run the VFX's path to see how it looks. There's also a "Generate" button that converts the VFX path into a script so you can use it.</li>
+                    <li><strong>VFX Stealer</strong> - Steals VFXs from the current game. <br>
+                        <strong>How to use it:</strong> You must be in the game where you want to extract the VFX. If you try using another game's path, it won’t work. Enter the current game's path, and it will generate a script for you. Now, you can play that VFX in any game.</li>
+                </ul>
+            </div>
         </div>
 
-        <div id="image-section" class="hidden">
-            <img src="https://raw.githubusercontent.com/LolnotaKid/Pic/main/1740749023021.png" alt="Veux Logger Image" class="responsive-image">
-        </div>
+        <!-- Premium Content (Hidden Initially) -->
+        <div id="premium-content" class="hidden">
+            <div class="content-box">
+                <h1>Premium Version</h1>
+                <p>Premium Version has many features and supports all mobile devices. It loads using a method that prevents freezing or long wait times.</p>
+            </div>
 
-        <div class="content-box hidden" id="features-section">
-            <h1>HOW MANY FEATURES ARE AVAILABLE?</h1>
-            <p>Currently, there are 3 features available:</p>
-            <ul>
-                <li><strong>Full Screen</strong> - For those who can't see the full path and want to make it bigger.</li>
-                <li><strong>Run VFX</strong> - Allows you to run the VFX's path to see how it looks. There's also a "Generate" button that converts the VFX path into a script so you can use it.</li>
-                <li><strong>VFX Stealer</strong> - Steals VFXs from the current game. <br>
-                    <strong>How to use it:</strong> You must be in the game where you want to extract the VFX. If you try using another game's path, it won’t work. Enter the current game's path, and it will generate a script for you. Now, you can play that VFX in any game.</li>
-            </ul>
+            <div class="content-box">
+                <h1>Features?</h1>
+                <p>The premium version offers faster scripting, bug fixes sooner than the free version, and the ability to create custom VFX and more!</p>
+            </div>
+
+            <div class="content-box">
+                <h1>Costs</h1>
+                <p>It costs **15,000,000 🪙** and includes a Premium Role.</p>
+            </div>
         </div>
     </div>
 
