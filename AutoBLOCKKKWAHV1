@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Skull-7/refs/heads/main/module1.txt"))()
+loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/99bc87bd187ea482d03f956afcdff81885869adf8a40b31fdf718319d8c8239f/download"))()
