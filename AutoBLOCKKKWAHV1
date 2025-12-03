@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/LolnotaKid/Skull-7/refs/heads/main/module1.txt
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Skull-7/refs/heads/main/module1.txt"))()
