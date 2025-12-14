@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Skull-1/refs/heads/main/guesting%20hub.lua.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Skull-6/refs/heads/main/gast.lua.txt"))()
