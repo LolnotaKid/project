@@ -1,1 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/Skull-3/refs/heads/main/ihopeYouAreGood.lua.txt"))()
+local d = identifyexecutor()
+print(d)
+loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e7da5ccc613ad180e4baeac2124054374e459aae8b766f54fd42be1e20332f5f/download"))()
