@@ -5,7 +5,7 @@ loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e7da5ccc
 print("tufff")
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Update OUT", 
-	Text = "Fat Bird 🐦", 
+	Title = "New Update Soon", 
+	Text = "Not Fake fr 😎", 
 	Icon = "rbxassetid://1234567890"
 })
