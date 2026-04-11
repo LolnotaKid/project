@@ -3,3 +3,11 @@ local d = identifyexecutor()
 print(d)
 loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e7da5ccc613ad180e4baeac2124054374e459aae8b766f54fd42be1e20332f5f/download"))()
 print("tufff")
+task.spawn(function()
+    local e = identifyexecutor()
+    local n = string.lower(e)
+
+    if n:find("xeno") or n:find("solara") then
+        game.Players.LocalPlayer:Kick("This is not a problem - We don't Support Your Executor")
+    end
+end)
