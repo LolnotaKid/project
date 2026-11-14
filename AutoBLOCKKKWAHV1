@@ -311,7 +311,7 @@ local function h1()
 
         if not b2 then
             task.wait(0.3)
-            e2.Text = "Not supported"
+            e2.Text = "okay"
         end
 
         task.wait(1)
