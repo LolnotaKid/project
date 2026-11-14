@@ -1,5 +1,6 @@
 -- did u know 1+1 is 3
 
+-- DON'T remove this we don't fucking allow shiity executors
 local d = identifyexecutor()
 
 task.spawn(function()
@@ -11,18 +12,347 @@ task.spawn(function()
     end
 end)
 
-if game.PlaceId == 70845479499574 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hiimchae/bbn-why-are-you-here/refs/heads/main/83783922.lua"))()
-elseif game.PlaceId == 70876832253163 then
-    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/fc3935820e793c3646c6d4ead8a3aba190372f025042644850699544d639fcc9/download"))()
-elseif game.PlaceId == 116495829188952 then
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Lobby",
-        Text = "Ur in lobby Pls join a game",
-        Duration = 5
-    })
-else
-    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e7da5ccc613ad180e4baeac2124054374e459aae8b766f54fd42be1e20332f5f/download"))()
+-- this is game checker
+
+local games = {
+    forsaken = {
+        id = {}, -- well idk why I made forsaken as universal 
+        load = [[]]
+    },
+    deadrails = {
+        id = {70876832253163},
+        load = [[loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/fc3935820e793c3646c6d4ead8a3aba190372f025042644850699544d639fcc9/download"))()]]
+    },
+    bluxfruit = {
+        id = {
+            2753915549,      
+            85211729168715,  
+            4442272183,      
+            79091703265657,  
+            7449423635,   
+            100117331123089, 
+        },
+        load = [[]] -- yes soon coming dw
+    },
+    universal = {
+        id = "universal",
+        load = [[loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e7da5ccc613ad180e4baeac2124054374e459aae8b766f54fd42be1e20332f5f/download"))()]] -- this is forsaken
+    }
+}
+-- ah yes ui part here --
+local a1 = {}
+local a2 = game:GetService("Players").LocalPlayer
+local a3 = game:GetService("TweenService")
+local a4 = game:GetService("MarketplaceService")
+
+local b1 = game.PlaceId
+local b2 = nil
+local b5 = nil
+
+for _, b3 in pairs(games) do
+    local b6 = type(b3.id) == "table" and b3.id or {b3.id}
+    for _, b4 in ipairs(b6) do
+        if tostring(b4) == "universal" then
+            b5 = b3
+        elseif tostring(b4) == tostring(b1) then
+            b2 = b3
+        end
+    end
 end
 
-print("tufff")
+a1["ScreenGui_1"] = Instance.new("ScreenGui", a2:WaitForChild("PlayerGui"));
+a1["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+a1["Frame_2"] = Instance.new("Frame", a1["ScreenGui_1"]);
+a1["Frame_2"]["BorderSizePixel"] = 0;
+a1["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["Frame_2"]["Size"] = UDim2.new(0.61918, 0, 0.76159, 0);
+a1["Frame_2"]["Position"] = UDim2.new(0.18515, 0, 0.03146, 0);
+a1["Frame_2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+a1["UICorner_3"] = Instance.new("UICorner", a1["Frame_2"]);
+
+a1["plsnoskid_4"] = Instance.new("UIGradient", a1["Frame_2"]);
+a1["plsnoskid_4"]["Name"] = [[plsnoskid]];
+a1["plsnoskid_4"]["Rotation"] = 45;
+a1["plsnoskid_4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(24, 24, 24)),ColorSequenceKeypoint.new(0.500, Color3.fromRGB(40, 40, 40)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(62, 62, 62))};
+
+a1["UIAspectRatioConstraint_5"] = Instance.new("UIAspectRatioConstraint", a1["Frame_2"]);
+a1["UIAspectRatioConstraint_5"]["AspectRatio"] = 1.96522;
+
+a1["gh_6"] = Instance.new("TextLabel", a1["Frame_2"]);
+a1["gh_6"]["TextWrapped"] = true;
+a1["gh_6"]["ZIndex"] = 999;
+a1["gh_6"]["BorderSizePixel"] = 0;
+a1["gh_6"]["TextSize"] = 25;
+a1["gh_6"]["TextScaled"] = true;
+a1["gh_6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["gh_6"]["FontFace"] = Font.new([[rbxasset://fonts/families/ComicNeueAngular.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+a1["gh_6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+a1["gh_6"]["BackgroundTransparency"] = 1;
+a1["gh_6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+a1["gh_6"]["Size"] = UDim2.new(0.45, 0, 0.13, 0);
+a1["gh_6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["gh_6"]["Text"] = [[Guesting Hub]];
+a1["gh_6"]["Name"] = [[gh]];
+a1["gh_6"]["Position"] = UDim2.new(0.02843, 0, 0.05, 0);
+
+a1["UIGradient_7"] = Instance.new("UIGradient", a1["gh_6"]);
+a1["UIGradient_7"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(183, 63, 255)),ColorSequenceKeypoint.new(0.371, Color3.fromRGB(124, 47, 201)),ColorSequenceKeypoint.new(0.613, Color3.fromRGB(38, 38, 223)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(17, 68, 199))};
+
+a1["mbt_8"] = Instance.new("Folder", a1["Frame_2"]);
+a1["mbt_8"]["Name"] = [[mbt]];
+
+a1["TextButton_9"] = Instance.new("TextButton", a1["mbt_8"]);
+a1["TextButton_9"]["BorderSizePixel"] = 0;
+a1["TextButton_9"]["TextSize"] = 20;
+a1["TextButton_9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextButton_9"]["BackgroundColor3"] = Color3.fromRGB(88, 88, 88);
+a1["TextButton_9"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+a1["TextButton_9"]["Size"] = UDim2.new(0.27, 0, 0.13, 0);
+a1["TextButton_9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextButton_9"]["Text"] = [[Updates]];
+a1["TextButton_9"]["Position"] = UDim2.new(0.03, 0, 0.34, 0);
+
+a1["UICorner_a"] = Instance.new("UICorner", a1["TextButton_9"]);
+
+a1["TextButton_b"] = Instance.new("TextButton", a1["mbt_8"]);
+a1["TextButton_b"]["BorderSizePixel"] = 0;
+a1["TextButton_b"]["TextSize"] = 20;
+a1["TextButton_b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextButton_b"]["BackgroundColor3"] = Color3.fromRGB(88, 88, 88);
+a1["TextButton_b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+a1["TextButton_b"]["Size"] = UDim2.new(0.27, 0, 0.13, 0);
+a1["TextButton_b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextButton_b"]["Text"] = [[Supports]];
+a1["TextButton_b"]["Position"] = UDim2.new(0.03, 0, 0.52, 0);
+
+a1["UICorner_c"] = Instance.new("UICorner", a1["TextButton_b"]);
+
+a1["ImageLabel_d"] = Instance.new("ImageLabel", a1["Frame_2"]);
+a1["ImageLabel_d"]["BorderSizePixel"] = 0;
+a1["ImageLabel_d"]["BackgroundColor3"] = Color3.fromRGB(205, 205, 210);
+a1["ImageLabel_d"]["Size"] = UDim2.new(0.27, 0, 0.475, 0);
+a1["ImageLabel_d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["ImageLabel_d"]["Position"] = UDim2.new(0.67, 0, 0.087, 0);
+a1["ImageLabel_d"]["ScaleType"] = Enum.ScaleType.Crop;
+if game.GameId ~= 0 then
+    a1["ImageLabel_d"]["Image"] = "rbxthumb://type=GameIcon&id=" .. game.GameId .. "&w=256&h=256"
+end
+
+a1["UICorner_e"] = Instance.new("UICorner", a1["ImageLabel_d"]);
+
+a1["TextLabel_11"] = Instance.new("TextLabel", a1["Frame_2"]);
+a1["TextLabel_11"]["TextWrapped"] = true;
+a1["TextLabel_11"]["BorderSizePixel"] = 0;
+a1["TextLabel_11"]["TextSize"] = 14;
+a1["TextLabel_11"]["TextScaled"] = true;
+a1["TextLabel_11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_11"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+a1["TextLabel_11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_11"]["BackgroundTransparency"] = 1;
+a1["TextLabel_11"]["Size"] = UDim2.new(0.27, 0, 0.15, 0);
+a1["TextLabel_11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextLabel_11"]["Text"] = [[...]];
+a1["TextLabel_11"]["Position"] = UDim2.new(0.67, 0, 0.58, 0);
+
+a1["load_12"] = Instance.new("Frame", a1["Frame_2"]);
+a1["load_12"]["BorderSizePixel"] = 0;
+a1["load_12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["load_12"]["Size"] = UDim2.new(0.325, 0, 0.115, 0);
+a1["load_12"]["Position"] = UDim2.new(0.662, 0, 0.842, 0);
+a1["load_12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["load_12"]["Name"] = [[load]];
+
+a1["UICorner_13"] = Instance.new("UICorner", a1["load_12"]);
+
+a1["UIGradient_14"] = Instance.new("UIGradient", a1["load_12"]);
+a1["UIGradient_14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(83, 83, 83)),ColorSequenceKeypoint.new(0.373, Color3.fromRGB(108, 108, 108)),ColorSequenceKeypoint.new(0.610, Color3.fromRGB(123, 123, 123)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(83, 83, 83))};
+
+a1["TextLabel_15"] = Instance.new("TextLabel", a1["load_12"]);
+a1["TextLabel_15"]["TextWrapped"] = true;
+a1["TextLabel_15"]["BorderSizePixel"] = 0;
+a1["TextLabel_15"]["TextSize"] = 14;
+a1["TextLabel_15"]["TextScaled"] = true;
+a1["TextLabel_15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_15"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+a1["TextLabel_15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_15"]["BackgroundTransparency"] = 1;
+a1["TextLabel_15"]["Size"] = UDim2.new(0.9, 0, 0.7, 0);
+a1["TextLabel_15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextLabel_15"]["Text"] = [[Loading : 0%]];
+a1["TextLabel_15"]["Position"] = UDim2.new(0.05, 0, 0.15, 0);
+
+a1["scroll_16"] = Instance.new("Folder", a1["Frame_2"]);
+a1["scroll_16"]["Name"] = [[scroll]];
+
+a1["support_17"] = Instance.new("ScrollingFrame", a1["scroll_16"]);
+a1["support_17"]["Visible"] = false;
+a1["support_17"]["Active"] = true;
+a1["support_17"]["BorderSizePixel"] = 0;
+a1["support_17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["support_17"]["Name"] = [[support]];
+a1["support_17"]["Size"] = UDim2.new(0.39602, 0, 0.93478, 0);
+a1["support_17"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+a1["support_17"]["Position"] = UDim2.new(-0.3969, 0, 0, 0);
+a1["support_17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+a1["UICorner_18"] = Instance.new("UICorner", a1["support_17"]);
+
+a1["UIGradient_19"] = Instance.new("UIGradient", a1["support_17"]);
+a1["UIGradient_19"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(42, 42, 42)),ColorSequenceKeypoint.new(0.489, Color3.fromRGB(101, 101, 101)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(42, 42, 42))};
+
+a1["info_1a"] = Instance.new("Folder", a1["support_17"]);
+a1["info_1a"]["Name"] = [[info]];
+
+a1["TextLabel_1b"] = Instance.new("TextLabel", a1["info_1a"]);
+a1["TextLabel_1b"]["TextWrapped"] = true;
+a1["TextLabel_1b"]["BorderSizePixel"] = 0;
+a1["TextLabel_1b"]["TextSize"] = 14;
+a1["TextLabel_1b"]["TextScaled"] = true;
+a1["TextLabel_1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+a1["TextLabel_1b"]["TextColor3"] = Color3.fromRGB(243, 243, 243);
+a1["TextLabel_1b"]["BackgroundTransparency"] = 1;
+a1["TextLabel_1b"]["RichText"] = true;
+a1["TextLabel_1b"]["Size"] = UDim2.new(0.83799, 0, 0.1, 0);
+a1["TextLabel_1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextLabel_1b"]["Text"] = [[Forsaken, Dead Rails and idk]];
+a1["TextLabel_1b"]["Position"] = UDim2.new(0.03519, 0, 0.05, 0);
+
+a1["updates_1c"] = Instance.new("ScrollingFrame", a1["scroll_16"]);
+a1["updates_1c"]["Visible"] = false;
+a1["updates_1c"]["Active"] = true;
+a1["updates_1c"]["BorderSizePixel"] = 0;
+a1["updates_1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["updates_1c"]["Name"] = [[updates]];
+a1["updates_1c"]["Size"] = UDim2.new(0.39602, 0, 0.93478, 0);
+a1["updates_1c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+a1["updates_1c"]["Position"] = UDim2.new(-0.3969, 0, 0, 0);
+a1["updates_1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+a1["UICorner_1d"] = Instance.new("UICorner", a1["updates_1c"]);
+
+a1["UIGradient_1e"] = Instance.new("UIGradient", a1["updates_1c"]);
+a1["UIGradient_1e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(42, 42, 42)),ColorSequenceKeypoint.new(0.489, Color3.fromRGB(101, 101, 101)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(42, 42, 42))};
+
+a1["info_1f"] = Instance.new("Folder", a1["updates_1c"]);
+a1["info_1f"]["Name"] = [[info]];
+
+a1["TextLabel_20"] = Instance.new("TextLabel", a1["info_1f"]);
+a1["TextLabel_20"]["TextWrapped"] = true;
+a1["TextLabel_20"]["BorderSizePixel"] = 0;
+a1["TextLabel_20"]["TextSize"] = 14;
+a1["TextLabel_20"]["TextScaled"] = true;
+a1["TextLabel_20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+a1["TextLabel_20"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+a1["TextLabel_20"]["TextColor3"] = Color3.fromRGB(243, 243, 243);
+a1["TextLabel_20"]["BackgroundTransparency"] = 1;
+a1["TextLabel_20"]["RichText"] = true;
+a1["TextLabel_20"]["Size"] = UDim2.new(0.83799, 0, 0.1, 0);
+a1["TextLabel_20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+a1["TextLabel_20"]["Text"] = [[idk.. Adding this loader ?]];
+a1["TextLabel_20"]["Position"] = UDim2.new(0.03519, 0, 0.05, 0);
+
+local e1 = 0
+local e2 = a1["TextLabel_15"]
+local e3 = a1["TextLabel_11"]
+local e4 = a1["Frame_2"]
+local e5 = e4.Position
+local e6 = a1["support_17"]
+local e7 = a1["updates_1c"]
+local e8 = nil
+
+task.spawn(function()
+    local f1, f2 = pcall(function()
+        return a4:GetProductInfo(b1)
+    end)
+    if f1 and f2 then
+        e3.Text = f2.Name
+    else
+        e3.Text = "Error"
+    end
+end)
+
+local g1 = false
+local function g2()
+    if g1 then return end
+    g1 = true
+
+    local g3 = b2 or b5
+
+    if g3 and g3.load ~= "" then
+        task.spawn(function()
+            loadstring(g3.load)()
+        end)
+    end
+end
+
+local function h1()
+    if e1 <= 100 then
+        e2.Text = "Loading : " .. e1 .. "%"
+
+        if e1 >= 75 then
+            g2()
+        end
+
+        e1 = e1 + 1
+
+        local h2 = 0.03
+        if e1 > 80 then h2 = 0.05
+        elseif e1 > 50 then h2 = 0.04
+        elseif e1 > 30 then h2 = 0.03
+        else h2 = 0.02 end
+
+        task.wait(h2)
+        h1()
+    else
+        e2.Text = "Loading : 100%"
+
+        if not b2 then
+            task.wait(0.3)
+            e2.Text = "Not supported"
+        end
+
+        task.wait(1)
+
+        local h3 = UDim2.new(2, 0, e5.Y.Scale, e5.Y.Offset)
+        local h4 = a3:Create(e4, TweenInfo.new(0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Position = h3})
+        h4:Play()
+        h4.Completed:Wait()
+
+        a1["ScreenGui_1"]:Destroy()
+    end
+end
+
+local function i1(i2)
+    if e8 == i2 then
+        local i3 = a3:Create(e4, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = e5})
+        i3:Play()
+        i3.Completed:Wait()
+        i2.Visible = false
+        e8 = nil
+    elseif e8 then
+        e8.Visible = false
+        i2.Visible = true
+        e8 = i2
+    else
+        i2.Visible = true
+        local i4 = UDim2.new(e5.X.Scale + 0.15, e5.X.Offset, e5.Y.Scale, e5.Y.Offset)
+        local i5 = a3:Create(e4, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = i4})
+        i5:Play()
+        e8 = i2
+    end
+end
+
+a1["TextButton_9"].MouseButton1Click:Connect(function()
+    i1(e7)
+end)
+
+a1["TextButton_b"].MouseButton1Click:Connect(function()
+    i1(e6)
+end)
+
+h1()
+
+return a1["ScreenGui_1"], require;
