@@ -32,7 +32,7 @@ local games = {
             7449423635,   
             100117331123089, 
         },
-        load = [[]] -- yes soon coming dw
+        load = [[loadstring(game:HttpGet("https://flowauth.net/v1/loaders/2735168597a497ccc43346969d0ad5b5.lua"))()]] -- yes soon coming dw
     },
     universal = {
         id = "universal",
